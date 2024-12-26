@@ -2,6 +2,11 @@ name: Testing nodejs projects
 
 on: [push]
 
+env:
+    MONGO_URI: 'mongodb://54.198.237.117:27017/solar_system'
+    MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
+    MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+    
 jobs:
   build:
 
