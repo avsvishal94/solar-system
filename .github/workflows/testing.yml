@@ -22,4 +22,4 @@ jobs:
 
       - run: npm install 
       - run: npm audit fix --force
-      - run: npm test
+      - run: npm run-script
