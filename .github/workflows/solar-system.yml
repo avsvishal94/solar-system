@@ -21,12 +21,15 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Setup NodeJS Version
-          uses: actions/setup-node@v3
+          uses: actions/setup-node@v4
           with:
             node-version: 20
     
-        - name: Install Dependencies
+        - name: Installation of Dependencies
           run: npm install
+        
+        - name: Audit Fix
+          run: npm audit fix --force
     
         - name: Unit Testing
           run: npm run
@@ -35,5 +38,5 @@ jobs:
           uses: actions/upload-artifact@v3
           with:
             name: Mocha-Test-Result
-            path: *.xml
+            path: test-results.xml
             
